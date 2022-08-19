@@ -19,46 +19,51 @@ html {
   .sizecontrols {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 12px;
   }
 
   .colorcontrols {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 12px;
   }
 
   button {
     background-color: black;
     color: whitesmoke;
     border-radius: 12px;
+    cursor: pointer;
   }
   
-:root {
+ :root {
     --grid-cols: 1;
     --grid-rows: 1;
-  }
+  } 
 
-  #container {
-    display: grid;
-    grid-gap: 1px;
+   #container {
+    display: inline-grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    width: auto;
-    height: auto;
-  }
-  
-  .grid-item {
-    padding: 1em;
-    border: 2px solid black;
-    text-align: center;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    line-height: 0;
+  } 
+
+  .grid-cell {
+    border: 1px solid rgb(152, 99, 238);
     background-color: whitesmoke;
-  }
+    margin: 0;
+    padding: 0;
+}
+
 
   .header {
     text-align: center;
     font-weight: bold;
     color: whitesmoke;
+    font-size: larger;
+    text-shadow: 4px 4px 5px black;
   }
 
 
