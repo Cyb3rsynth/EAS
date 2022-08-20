@@ -81,5 +81,18 @@
     font-size: 25px;
   }
 
-
+ footer {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: x-large;
   
+}
+  
+a {
+    text-decoration: none;
+    color: black;
+}

@@ -28,41 +28,38 @@ function removeAllGridCells() {
     }
 }
 
- //functions to change size of the grid
+ //functions to change size of the grid which calls our makeRow function within (normal grid)
   document.querySelector(".sizebtn1").onclick = () => {
-    makeRows(8, 8); 
+    makeRows(64, 64); 
   }
   document.querySelector(".sizebtn2").onclick = () => {
      makeRows(32, 32); 
   }
   document.querySelector(".sizebtn3").onclick = () => {
-    makeRows(64, 64); 
+    makeRows(8, 8); 
  }
 
-
-//function to highlight the divs as you move over them with your mouse
+//function to highlight the divs as you move over them with your mouse - Regular color 'Black'
 function changeColor (target) {
     target.style.backgroundColor = 'black';
 }
 
-
+//Event listener for changing the divs to black as the mouse moves over them
 container.addEventListener("mouseover", function (e) {
 let container = document.querySelector("container");
     target = e.target;
-
     if (target.matches("div")) {
         changeColor(target);
     }
 });
 
-//reset button - erase and clean paper
+//reset button - Clean grid slate
 const reset = document.querySelector('.eraseBtn');
 reset.addEventListener('click', function(){
      window.location.reload();
 });
 
-//Function for colored divs
-
+//Event listeners for clicking on erase or RGB buttons
 modergb.addEventListener("click", () => {
     let color = "rainbow";
     setColor(color);
@@ -73,11 +70,13 @@ modeerase.addEventListener("click", () => {
     setColor(color);
   });
 
+//Function for generating a random number
 function randomNum(min, max) {
     const num = Math.floor(Math.random() * (max - min)) + min;
     return num;
   }
   
+//Function for getting a random color based on the randomNum generated from the previous function
 function randomColor() {
     return (
       "rgb(" +
@@ -90,6 +89,7 @@ function randomColor() {
     );
   }
 
+//Function to set a color either to rainbow or white(blank)
 function setColor(color) {
     const container = document.querySelectorAll("#container");
     for (let i = 0; i < container.length; i++) {
